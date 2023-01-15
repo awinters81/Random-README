@@ -5,6 +5,10 @@
 const inquirer = require('inquirer');
 const generateMarkdown = require ('./utils/generateMarkdown');
 
+//Another package? No, fs is a cross-platform, uniform interface to file system operations whitch shares the same back-end component as nodejs.
+
+const fs = require('fs');
+
 // TODO: Create an array of questions for user input
 // What would be typical questions for a README? The project name, a description, whose account it belongs to, email, maybe dependencies since
 // I know that we have a package.json file.
@@ -48,7 +52,12 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// So if this is to write the README, that would mean that it needs to return something...
+// The process.cwd() method returns the current working directory of the Node.js process.
+
+function writeToFile(fileName, data) {
+    return fs.writeFile(join(process.cwd(),fileName, data))
+}
 
 // TODO: Create a function to initialize app
 function init() {}

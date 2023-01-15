@@ -56,11 +56,15 @@ const questions = [
 // The process.cwd() method returns the current working directory of the Node.js process.
 
 function writeToFile(fileName, data) {
-    return fs.writeFile(join(process.cwd(),fileName, data))
+    return fs.writeFile(join(process.cwd(),fileName, data));
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.createPromptModule(questions) => {
+        writeToFile('README.md', generateMarkdown);
+    }
+}
 
 // Function call to initialize app
 init();

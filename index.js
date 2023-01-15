@@ -60,6 +60,8 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
+// Well, that didn't quite work...
+
 function init() {
     inquirer.createPromptModule(questions) => {
         writeToFile('README.md', generateMarkdown);
